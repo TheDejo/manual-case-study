@@ -1,0 +1,13 @@
+@use '../../style/core.scss' as core;
+
+.component {
+    .logo {
+        width: core.$space5;
+        height: core.$space5;
+
+        &.large {
+            width: core.$space1 * 9.375;
+            height: core.$space1 * 9.375;
+        }
+    }
+}

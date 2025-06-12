@@ -1,0 +1,70 @@
+@use '../../style/color.scss' as color;
+@use '../../style/core.scss' as core;
+@use '../../style/typography.scss' as typography;
+@use '../../style/breakpoint.scss' as breakpoint;
+
+.componentWrapper {
+  background-color: color.$primary-color;
+}
+
+.component {
+    padding-top: core.$space3;
+    height: core.$space1 * 60;
+    background-image: url('../../assets/images/homepage/hero.png');
+    background-size: contain;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+
+    @include breakpoint.md {
+        height: core.$space1 * 87.5;
+    }
+
+    .heroContent {
+        display: flex;
+        height: core.$full;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        @include breakpoint.lg {
+            justify-content: center;
+        }
+    }
+
+    .textBox {
+        max-width: core.$space1 * 59;
+
+        .title {
+            @include typography.heading3;
+
+            padding-bottom: core.$space3;
+
+            @include breakpoint.md {
+                @include typography.heading1;
+            }
+        }
+
+        .description {
+            @include typography.regular4;
+
+            font-weight: typography.$font-normal;
+
+            @include breakpoint.md {
+                @include typography.regular3;
+                line-height: core.$space4;
+            }
+        }
+    }
+
+    .link {
+        @include typography.regular7;
+
+        background-color: color.$mannual-red;
+        width: fit-content;
+        color: color.$white;
+        padding: core.$space2 core.$space3;
+        text-decoration: none;
+        text-transform: uppercase;
+        margin-top: core.$space4;
+    }
+}

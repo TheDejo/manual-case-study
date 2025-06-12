@@ -1,7 +1,38 @@
 {
     "hero": {
         "title": "Be good to yourself",
-        "description": "We’re working around the clock to bring you a holistic approach to your wellness. From top to bottom, inside and out.",
+        "description": "We're working around the clock to bring you a holistic approach to your wellness. From top to bottom, inside and out.",
         "cta": "Take the quiz"
+    },
+    "footer": {
+        "columns": [
+            {
+                "title": "Product",
+                "links": [
+                    "Popular",
+                    "Trending",
+                    "Guided",
+                    "Products"
+                ]
+            },
+            {
+                "title": "Company",
+                "links": [
+                    "Press",
+                    "Mission",
+                    "Strategy",
+                    "About"
+                ]
+            },
+            {
+                "title": "Info",
+                "links": [
+                    "Support",
+                    "Customer Service",
+                    "Get started"
+                ]
+            }
+        ],
+        "copyright": "© {year} Manual. All rights reserved"
     }
 }   

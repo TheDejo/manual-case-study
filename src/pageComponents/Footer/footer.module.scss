@@ -1,0 +1,83 @@
+@use '../../style/color.scss' as color;
+@use '../../style/core.scss' as core;
+@use '../../style/typography.scss' as typography;
+@use '../../style/breakpoint.scss' as breakpoint;
+
+.componentWrapper {
+    background-color: color.$background-green;
+}
+
+.component {
+    padding: core.$space6 0 core.$space3;
+
+    .footerContent {
+        display: flex;
+        flex-direction: column;
+        gap: core.$space4;
+
+        @include breakpoint.lg {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: core.$space6;
+        }
+    }
+
+    .footerLinks {
+        display: flex;
+        flex-direction: column;
+        gap: core.$space4;
+
+        @include breakpoint.xs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: core.$space4;
+        }
+
+        @include breakpoint.md {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: core.$space6;
+        }
+    }
+
+    .footerLinksColumnTitle {
+        @include typography.regular7;
+
+        text-transform: uppercase;
+        font-weight: typography.$font-bold;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footerLinksColumnList {
+        display: flex;
+        flex-direction: column;
+        gap: core.$space3;
+        padding-top: core.$space3;
+
+        .footerLink {
+            text-decoration: none;
+            color: color.$text-green;
+        }
+    }
+
+    .footerSocialIcons {
+        display: flex;
+        gap: core.$space3;
+        padding-top: core.$space3;
+    }
+
+    .copyright {
+        @include typography.regular5;
+
+        text-align: center;
+        color: color.$faded-text-green;
+        border-top: core.$space solid color.$border-color;
+        padding: core.$space3;
+        margin-top: core.$space9;
+    }
+}

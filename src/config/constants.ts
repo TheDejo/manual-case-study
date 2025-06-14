@@ -9,7 +9,14 @@ const SOCIAL_LINKS = {
     twitter: 'https://www.twitter.com',
 }
 
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+
+const API_ROUTES = {
+    questionnaire: `${BASE_URL}/api/questionnaire`,
+}
+
 export const constants = {
+    API_ROUTES,
     CLIENT_ROUTES,
     SOCIAL_LINKS,
 }

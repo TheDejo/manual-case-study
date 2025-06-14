@@ -4,11 +4,16 @@ import styles from './hero.module.scss'
 import Link from 'next/link'
 import { constants } from '@/config/constants'
 import localTexts from '@/app/homepage.texts.json'
+import { Button } from '@/components/Button/Button'
 
 const { CLIENT_ROUTES } = constants;
 const { hero } = localTexts;
 
-export default function Hero() {
+interface HeroProps {
+  onCtaClick: () => void;
+}
+
+export default function Hero({ onCtaClick }: HeroProps) {
   return (
     <HomeComponentContainer className={styles.component} styleWrapper={styles.componentWrapper}>
         <div className={styles.heroContent}>
@@ -20,9 +25,7 @@ export default function Hero() {
               {hero.description}
             </p>
           </div>
-          <Link href={CLIENT_ROUTES.quiz} className={styles.link}>
-            {hero.cta}
-          </Link>
+          <Button title={hero.cta} onClick={onCtaClick} />
         </div>
     </HomeComponentContainer>
   )

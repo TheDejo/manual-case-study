@@ -1,0 +1,24 @@
+@use '../../style/core.scss' as core;
+@use '../../style/breakpoint.scss' as breakpoint;
+@use '../../style/typography.scss' as typography;
+@use '../../style/color.scss' as color;
+
+.button {
+    @include typography.regular7;
+    
+    background-color: color.$manual-red;
+    color: color.$white;
+    margin-top: core.$space4;
+    padding: core.$space2 core.$space3;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: fit-content;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+    &.secondary {
+        background-color: color.$primary-color;
+        color: color.$text-green;
+    }
+}

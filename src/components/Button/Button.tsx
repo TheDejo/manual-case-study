@@ -9,7 +9,7 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
     isDashboard?: boolean;
 };
 export const Button: React.FC<ButtonProps> = props => {
-    const { className, title, variant = VARIANTS.PRIMARY, ...rest } = props;
+    const { className, title, variant = VARIANTS.PRIMARY, disabled, ...rest } = props;
 
     const buttonClass = cx(styles.button, className, {
         [styles.primary]: variant === VARIANTS.PRIMARY,
@@ -17,7 +17,9 @@ export const Button: React.FC<ButtonProps> = props => {
     });
 
   return (
-    <button className={cx(styles.button, buttonClass)} {...rest}>
+    <button className={cx(styles.button, buttonClass, {
+        [styles.disabled]: disabled,
+    })} {...rest}>
         {title}
     </button>
   )

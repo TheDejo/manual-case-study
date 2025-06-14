@@ -21,6 +21,26 @@
             }
         ]
     },
+    "questionnaire": {
+        "loading": "Loading questionnaire...",
+        "resultsTitle": "Results",
+        "questionTitle": "Question {current} of {total}",
+        "navigation": {
+            "previous": "← Previous",
+            "next": "Next →"
+        }
+    },
+    "results": {
+        "rejection": {
+            "title": "Unfortunately, we are unable to prescribe this medication for you.",
+            "description": "This is because finasteride can alter the PSA levels, which may be used to monitor for cancer. You should discuss this further with your GP or specialist if you would still like this medication."
+        },
+        "success": {
+            "title": "Great news! We have the perfect treatment for your hair loss.",
+            "description": "Proceed to {manualLink}, and prepare to say hello to your new hair!"
+        },
+        "closeButton": "Close"
+    },
     "footer": {
         "columns": [
             {

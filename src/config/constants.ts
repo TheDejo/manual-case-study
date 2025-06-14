@@ -9,6 +9,10 @@ const SOCIAL_LINKS = {
     twitter: 'https://www.twitter.com',
 }
 
+const COMPANY_LINKS = {
+    manual: 'https://www.manual.co',
+}
+
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 const API_ROUTES = {
@@ -19,4 +23,5 @@ export const constants = {
     API_ROUTES,
     CLIENT_ROUTES,
     SOCIAL_LINKS,
+    COMPANY_LINKS,
 }

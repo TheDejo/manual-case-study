@@ -21,4 +21,10 @@
         background-color: color.$primary-color;
         color: color.$text-green;
     }
+
+    &.disabled {
+        background-color: color.$disabled-color;
+        color: color.$white;
+        cursor: not-allowed;
+    }
 }

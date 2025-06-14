@@ -12,108 +12,207 @@
     background-color: color.$white;
     z-index: 1000;
     animation: fadeIn 0.3s ease-out;
-}
 
-.modal {
-    background-color: color.$white;
-    height: 100vh;
-    width: 100%;
-    animation: slideIn 0.3s ease-out;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
-.modalHeader {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: core.$space4 core.$space4 0;
-
-    @include breakpoint.md {
-        padding: core.$space5 core.$space5 0;
-    }
-}
-
-.modalTitle {
-    @include typography.heading4;
-    margin: 0;
-    color: color.$text-green;
-
-    @include breakpoint.md {
-        @include typography.heading3;
-    }
-}
-
-.closeButton {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: core.$space2;
-    border-radius: 6px;
-    color: color.$text-green;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    &:hover {
+    .modal {
         background-color: color.$white;
-        color: color.$text-green;
+        height: core.$full-vh;
+        min-width: core.$space1 * 49.125;
+        animation: slideIn 0.3s ease-out;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        @include breakpoint.xs {
+            width: core.$full;
+        }
     }
 
-    &:focus {
-        outline: 2px solid color.$primary-color;
-        outline-offset: 2px;
-    }
-
-    svg {
-        width: 20px;
-        height: 20px;
+    .modalHeader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: core.$space4 core.$space4 0;
+        border-bottom: core.$space solid color.$border-color;
 
         @include breakpoint.md {
-            width: 24px;
-            height: 24px;
+            padding: core.$space5 core.$space5 0;
+        }
+    }
+
+    .modalTitle {
+        @include typography.heading4;
+        margin: 0;
+        color: color.$text-green;
+
+        @include breakpoint.md {
+            @include typography.heading3;
+        }
+    }
+
+    .closeButton {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: core.$space2;
+        border-radius: core.$space * 6;
+        color: color.$text-green;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            color: color.$text-green;
+        }
+
+        &:focus {
+            outline: core.$space * 2 solid color.$primary-color;
+            outline-offset: core.$space * 2;
+        }
+
+        svg {
+            width: core.$space1 * 2.5;
+            height: core.$space1 * 2.5;
+
+            @include breakpoint.md {
+                width: core.$space3;
+                height: core.$space3;
+            }
+        }
+    }
+
+    .modalContent {
+        padding: core.$space4;
+        flex: 1;
+        overflow-y: auto;
+        color: color.$text-green;
+
+        @include breakpoint.md {
+            padding: core.$space5;
+        }
+    }
+
+    .loading {
+        @include typography.regular3;
+        text-align: center;
+        color: color.$text-green;
+        padding: core.$space8 0;
+    }
+
+    .questionContainer {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: core.$space4 0;
+    }
+
+    .questionText {
+        @include typography.heading4;
+        color: color.$text-green;
+        margin-bottom: core.$space6;
+        text-align: center;
+
+        @include breakpoint.md {
+            @include typography.heading3;
+        }
+    }
+
+    .optionsContainer {
+        display: flex;
+        flex-direction: column;
+        gap: core.$space3;
+        margin-bottom: core.$space6;
+    }
+
+    .optionButton {
+        background-color: color.$white;
+        border: core.$space * 2 solid color.$border-color;
+        border-radius: core.$space1 * 1.5;
+        padding: core.$space4;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-align: left;
+        width: core.$full;
+
+        &:hover {
+            border-color: color.$border-color;
+            background-color: color.$white;
+        }
+
+        &:focus {
+            outline: core.$space * 2 solid color.$primary-color;
+            outline-offset: core.$space * 2;
+        }
+
+        &.selected {
+            border-color: color.$primary-color;
+            background-color: color.$primary-color;
+            color: color.$white;
+
+            .optionContent {
+                color: color.$white;
+            }
+        }
+
+        &.rejection {
+            border-color: color.$border-color;
+
+            &:hover {
+                border-color: color.$border-color;
+                background-color: color.$white;
+            }
+
+            &.selected {
+                border-color: color.$primary-color;
+                background-color: color.$primary-color;
+                color: color.$white;
+
+                .optionContent {
+                    color: color.$white;
+                }
+            }
+        }
+    }
+
+    .optionContent {
+        color: color.$text-green;
+        font-size: core.$space2;
+
+        img {
+            max-width: core.$full;
+            height: auto;
+            border-radius: core.$space1;
+            margin-bottom: core.$space2;
+        }
+    }
+
+    .navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: core.$space4;
+        border-top: core.$space solid color.$border-color;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px) scale(0.95);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
         }
     }
 }
 
-.modalContent {
-    padding: core.$space4;
-    flex: 1;
-    overflow-y: auto;
-
-    @include breakpoint.md {
-        padding: core.$space5;
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px) scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-.modal:focus {
-    outline: none;
-}
-
-@media (max-height: 600px) {
-    .modalContent {
-        max-height: calc(100vh - 100px);
-    }
-} 

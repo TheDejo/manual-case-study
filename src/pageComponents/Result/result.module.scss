@@ -1,0 +1,46 @@
+@use '../../style/core.scss' as core;
+@use '../../style/typography.scss' as typography;
+@use '../../style/breakpoint.scss' as breakpoint;
+@use '../../style/color.scss' as color;
+
+
+.results {
+    max-width: core.$space1 * 75;
+    margin: 0 auto;
+    padding: core.$space4 0;
+    text-align: center;
+
+        .rejectionResult {
+                h3 {
+                    @include typography.heading4;
+                    margin-bottom: core.$space4;
+                }
+        
+                p {
+                    @include typography.regular3;
+                    color: color.$text-green;
+                }
+            }
+
+        .successResult {
+            h3 {
+                @include typography.heading4;
+                margin-bottom: core.$space4;
+            }
+
+            p {
+                @include typography.regular3;
+                color: color.$text-green;
+
+                a {
+                    color: color.$primary-color;
+                    text-decoration: none;
+                    font-weight: typography.$font-medium;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+}

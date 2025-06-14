@@ -4,6 +4,23 @@
         "description": "We're working around the clock to bring you a holistic approach to your wellness. From top to bottom, inside and out.",
         "cta": "Take the quiz"
     },
+    "services": {
+        "title": "What we can help with",
+        "cards": [
+            {
+                "tag": "Hair loss",
+                "title": "Hair loss needn't be irreversible. We can help!",
+                "description": "We're working around the clock to bring you a holistic approach to your wellness. From top to bottom, inside and out.",
+                "serviceNumber": 1
+            },
+            {
+                "tag": "Erecetile dysfunction",
+                "title": "Erections can be a tricky thing. But no need to feel down!",
+                "description": "We're working around the clock to bring you a holistic approach to your wellness. From top to bottom, inside and out.",
+                "serviceNumber": 2
+            }
+        ]
+    },
     "footer": {
         "columns": [
             {

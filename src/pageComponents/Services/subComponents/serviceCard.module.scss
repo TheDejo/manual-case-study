@@ -1,0 +1,119 @@
+@use '../../../style/core.scss' as core;
+@use '../../../style/typography.scss' as typography;
+@use '../../../style/breakpoint.scss' as breakpoint;
+
+
+.component {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: core.$space4;
+    position: relative;
+   
+
+    @include breakpoint.lg {
+        flex-direction: row;
+        width: core.$space1 * 106.125;
+    }
+
+    .serviceCardContent {
+        max-width: core.$space1 * 46.5;
+        position: relative;
+        right: 0;
+        z-index: 3;
+
+        @include breakpoint.lg {
+            position: absolute;
+        }
+
+        .serviceCardTag {
+            @include typography.regular7;
+
+            padding-bottom: core.$space2;
+            text-transform: uppercase;
+        }
+
+        .serviceCardTitle {
+            @include typography.heading4;
+
+            padding-bottom: core.$space3;
+        }
+
+        .serviceCardDescription {   
+            @include typography.regular3;
+        }
+    }
+
+    .serviceCardImage {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+
+        @include breakpoint.lg {
+            flex-direction: row;
+        }
+
+        .mainImage {
+            height: auto;
+            max-width: core.$full;
+            position: relative;
+            z-index: 2;
+
+            @include breakpoint.lg {
+                height: auto;
+                width: 370px;
+            }
+        }
+
+        .secondaryImage {
+            height: auto;
+            max-width: core.$full;
+            position: relative;
+            z-index: 1;
+
+            @include breakpoint.lg {
+                left: -50px;
+                right: unset;
+            }
+        }
+    }
+
+    &.isEven {
+        flex-direction: column;
+
+        @include breakpoint.lg {
+            flex-direction: row-reverse;
+        }
+    
+        .serviceCardImage {
+                flex-direction: column;
+
+                @include breakpoint.lg {
+                    flex-direction: row-reverse;
+                }
+    
+            .secondaryImage {
+                    height: auto;
+                    max-width: core.$full;
+                    position: relative;
+                    z-index: 1;
+
+                    @include breakpoint.lg {
+                        left: unset;
+                        right: -50px;
+                    }
+                }
+            }
+
+        .serviceCardContent {
+            left: 0;
+            right: unset;
+
+            @include breakpoint.lg {
+                position: absolute;
+            }
+        }
+    }
+}

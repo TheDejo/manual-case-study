@@ -1,0 +1,23 @@
+@use '../../style/core.scss' as core;
+@use '../../style/typography.scss' as typography;
+@use '../../style/breakpoint.scss' as breakpoint;
+@use '../../style/color.scss' as color;
+
+.component {
+    padding: core.$space9 0;
+
+    .servicesTitle {
+        @include typography.heading3;
+
+        padding-bottom: core.$space7;
+        text-align: center;
+    }
+
+    .servicesCards {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: core.$space9 * 2;
+        width: 100%;
+    }
+}

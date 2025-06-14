@@ -27,7 +27,7 @@ export const Logo: React.FC<ILogo> = ({
         priority
         className={styles.logo}
         src={LogoImage}
-        alt="MANNUAL logo"
+        alt="MANUAL logo"
       />
     </Link>
   );

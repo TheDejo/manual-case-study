@@ -10,7 +10,7 @@ const ttNorms = localFont({
 
 
 export const metadata: Metadata = {
-  title: "MANNUAL",
+  title: "MANUAL",
   description: "We’re working around the clock to bring you a holistic approach to your wellness. From top to bottom, inside and out.",
 };
 

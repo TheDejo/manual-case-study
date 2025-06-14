@@ -8,13 +8,13 @@
 }
 
 .component {
-    padding-top: core.$space3;
-    height: core.$space1 * 60;
+    background-blend-mode: multiply;
     background-image: url('../../assets/images/homepage/hero.png');
-    background-size: contain;
     background-position: right bottom;
     background-repeat: no-repeat;
-    background-blend-mode: multiply;
+    background-size: contain;
+    height: core.$space1 * 60;
+    padding-top: core.$space3;
 
     @include breakpoint.md {
         height: core.$space1 * 87.5;
@@ -22,8 +22,8 @@
 
     .heroContent {
         display: flex;
-        height: core.$full;
         flex-direction: column;
+        height: core.$full;
         justify-content: flex-start;
 
         @include breakpoint.lg {
@@ -51,6 +51,7 @@
 
             @include breakpoint.md {
                 @include typography.regular3;
+
                 line-height: core.$space4;
             }
         }
@@ -59,12 +60,12 @@
     .link {
         @include typography.regular7;
 
-        background-color: color.$mannual-red;
-        width: fit-content;
+        background-color: color.$manual-red;
         color: color.$white;
+        margin-top: core.$space4;
         padding: core.$space2 core.$space3;
         text-decoration: none;
         text-transform: uppercase;
-        margin-top: core.$space4;
+        width: fit-content;
     }
 }

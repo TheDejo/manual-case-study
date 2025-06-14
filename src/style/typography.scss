@@ -46,7 +46,7 @@ $text-green: #0B3B3C;
 }
 
 @mixin heading4 {
-  @include heading(32px, 500);
+  @include heading(28px, 500);
 }
 
 @mixin heading5 {

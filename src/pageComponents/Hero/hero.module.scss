@@ -25,9 +25,11 @@
         flex-direction: column;
         height: core.$full;
         justify-content: flex-start;
+        padding-top: core.$space5;
 
         @include breakpoint.lg {
             justify-content: center;
+            padding-top: unset;
         }
     }
 

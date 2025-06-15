@@ -41,7 +41,6 @@ export const handlers = [
         })
     }),
     
-    // Handle the case where BASE_URL is undefined
     http.get('/undefined/api/questionnaire', () => {
         return HttpResponse.json({
             success: true,

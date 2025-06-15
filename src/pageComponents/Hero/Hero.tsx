@@ -1,12 +1,9 @@
 import React from 'react'
 import { HomeComponentContainer } from '@/components/HomeComponentContainer/HomeComponentContainer'
 import styles from './hero.module.scss'
-import Link from 'next/link'
-import { constants } from '@/config/constants'
 import localTexts from '@/app/homepage.texts.json'
 import { Button } from '@/components/Button/Button'
 
-const { CLIENT_ROUTES } = constants;
 const { hero } = localTexts;
 
 interface HeroProps {

@@ -4,23 +4,20 @@
 @use '../../style/color.scss' as color;
 
 .modalContainer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    animation: fade-in 0.3s ease-out;
     background-color: color.$white;
+    inset: 0;
+    position: fixed;
     z-index: 1000;
-    animation: fadeIn 0.3s ease-out;
 
     .modal {
+        animation: slide-in 0.3s ease-out;
         background-color: color.$white;
-        height: core.$full-vh;
-        min-width: core.$space1 * 49.125;
-        animation: slideIn 0.3s ease-out;
-        position: relative;
         display: flex;
         flex-direction: column;
+        height: core.$full-vh;
+        min-width: core.$space1 * 49.125;
+        position: relative;
 
         @include breakpoint.xs {
             width: core.$full;
@@ -28,11 +25,11 @@
     }
 
     .modalHeader {
-        display: flex;
         align-items: center;
+        border-bottom: core.$space solid color.$border-color;
+        display: flex;
         justify-content: space-between;
         padding: core.$space4 core.$space4 0;
-        border-bottom: core.$space solid color.$border-color;
 
         @include breakpoint.md {
             padding: core.$space5 core.$space5 0;
@@ -41,8 +38,9 @@
 
     .modalTitle {
         @include typography.heading4;
-        margin: 0;
+
         color: color.$text-green;
+        margin: 0;
 
         @include breakpoint.md {
             @include typography.heading3;
@@ -50,16 +48,16 @@
     }
 
     .closeButton {
+        align-items: center;
         background: none;
         border: none;
-        cursor: pointer;
-        padding: core.$space2;
         border-radius: core.$space * 6;
         color: color.$text-green;
-        transition: all 0.2s ease;
+        cursor: pointer;
         display: flex;
-        align-items: center;
         justify-content: center;
+        padding: core.$space2;
+        transition: all 0.2s ease;
 
         &:hover {
             color: color.$text-green;
@@ -71,21 +69,21 @@
         }
 
         svg {
-            width: core.$space1 * 2.5;
             height: core.$space1 * 2.5;
+            width: core.$space1 * 2.5;
 
             @include breakpoint.md {
-                width: core.$space3;
                 height: core.$space3;
+                width: core.$space3;
             }
         }
     }
 
     .modalContent {
-        padding: core.$space4;
+        color: color.$text-green;
         flex: 1;
         overflow-y: auto;
-        color: color.$text-green;
+        padding: core.$space4;
 
         @include breakpoint.md {
             padding: core.$space5;
@@ -94,19 +92,21 @@
 
     .loading {
         @include typography.regular3;
-        text-align: center;
+
         color: color.$text-green;
         padding: core.$space8 0;
+        text-align: center;
     }
 
     .questionContainer {
-        max-width: 600px;
         margin: 0 auto;
+        max-width: 600px;
         padding: core.$space4 0;
     }
 
     .questionText {
         @include typography.heading4;
+
         color: color.$text-green;
         margin-bottom: core.$space6;
         text-align: center;
@@ -127,15 +127,15 @@
         background-color: color.$white;
         border: core.$space * 2 solid color.$border-color;
         border-radius: core.$space1 * 1.5;
-        padding: core.$space4;
         cursor: pointer;
-        transition: all 0.2s ease;
+        padding: core.$space4;
         text-align: left;
+        transition: all 0.2s ease;
         width: core.$full;
 
         &:hover {
-            border-color: color.$border-color;
             background-color: color.$white;
+            border-color: color.$border-color;
         }
 
         &:focus {
@@ -144,8 +144,8 @@
         }
 
         &.selected {
-            border-color: color.$primary-color;
             background-color: color.$primary-color;
+            border-color: color.$primary-color;
             color: color.$white;
 
             .optionContent {
@@ -157,13 +157,13 @@
             border-color: color.$border-color;
 
             &:hover {
-                border-color: color.$border-color;
                 background-color: color.$white;
+                border-color: color.$border-color;
             }
 
             &.selected {
-                border-color: color.$primary-color;
                 background-color: color.$primary-color;
+                border-color: color.$primary-color;
                 color: color.$white;
 
                 .optionContent {
@@ -178,22 +178,22 @@
         font-size: core.$space2;
 
         img {
-            max-width: core.$full;
-            height: auto;
             border-radius: core.$space1;
+            height: auto;
             margin-bottom: core.$space2;
+            max-width: core.$full;
         }
     }
 
     .navigation {
+        align-items: center;
+        border-top: core.$space solid color.$border-color;
         display: flex;
         justify-content: space-between;
-        align-items: center;
         padding-top: core.$space4;
-        border-top: core.$space solid color.$border-color;
     }
 
-    @keyframes fadeIn {
+    @keyframes fade-in {
         from {
             opacity: 0;
         }
@@ -203,7 +203,7 @@
         }
     }
 
-    @keyframes slideIn {
+    @keyframes slide-in {
         from {
             opacity: 0;
             transform: translateY(-20px) scale(0.95);

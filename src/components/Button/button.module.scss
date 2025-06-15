@@ -7,15 +7,15 @@
     @include typography.regular7;
     
     background-color: color.$manual-red;
+    border: none;
     color: color.$white;
+    cursor: pointer;
     margin-top: core.$space4;
+    outline: none;
     padding: core.$space2 core.$space3;
     text-decoration: none;
     text-transform: uppercase;
     width: fit-content;
-    outline: none;
-    border: none;
-    cursor: pointer;
 
     &.secondary {
         background-color: color.$primary-color;

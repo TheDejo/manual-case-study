@@ -6,11 +6,9 @@ import useGetQuestions from '@/utils/hooks/useGetQuestions';
 import { Button } from '@/components/Button/Button';
 import { VARIANTS } from '@/utils/types';
 import { X } from 'lucide-react';
-import { constants } from '@/config/constants';
 import Result from '../Result/Result';
 import localTexts from '@/app/homepage.texts.json';
 
-const { COMPANY_LINKS } = constants;
 const { questionnaire } = localTexts;
 
 interface QuestionaireModalProps {
@@ -21,8 +19,20 @@ interface QuestionaireModalProps {
 interface Answer {
   questionIndex: number;
   selectedOption: number;
-  value: any;
+  value: string | boolean;
   isRejection: boolean;
+}
+
+interface QuestionOption {
+  display: string;
+  value: string | boolean;
+  isRejection: boolean;
+}
+
+interface Question {
+  question: string;
+  type: string;
+  options: QuestionOption[];
 }
 
 export default function QuestionaireModal({ 
@@ -174,7 +184,7 @@ export default function QuestionaireModal({
             <h3 className={styles.questionText}>{currentQuestion?.question}</h3>
             
             <div className={styles.optionsContainer}>
-              {currentQuestion?.options.map((option: any, index: number) => (
+              {currentQuestion?.options.map((option: QuestionOption, index: number) => (
                 <button
                   key={index}
                   className={cx(

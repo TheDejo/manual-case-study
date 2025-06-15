@@ -31,5 +31,4 @@ interface Questionnaire {
   questions: Question[];
 }
 
-export interface QuestionnaireResponse extends APIResponse<Questionnaire> {
-}
+export type QuestionnaireResponse = APIResponse<Questionnaire>;

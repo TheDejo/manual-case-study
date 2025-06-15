@@ -92,3 +92,10 @@ I spent approximately **6.5 hours** on this exercise.
 4. **Internationalization (i18n)**:  
    - Implemented internationalization for text content to support multiple languages, ensuring accessibility and usability for a diverse audience.
 
+Desktop Lighthouse Audit:
+
+![Screenshot 2025-06-15 at 02 25 58 (2)](https://github.com/user-attachments/assets/91e806cd-9ca6-4992-83ea-3f2e0afbcd25)
+
+
+
+
